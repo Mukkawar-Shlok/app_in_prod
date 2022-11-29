@@ -29,7 +29,7 @@ const Home = ({ navigation }) => {
 		let sofaList = [];
 
 		for (let index = 0; index < Items.length; index++) {
-			if (Items[index].category == 'product') {
+			if (Items[index].category == 'product' | Items[index].category == 'sofa') {
 				sofaList.push(Items[index]);
 			}
 		}
@@ -49,6 +49,17 @@ const Home = ({ navigation }) => {
 
 	return (
 		<View style={{ paddingTop: 40, backgroundColor: COLOURS.black, height: '100%' }}>
+			<TouchableOpacity
+				onPress={() => navigation.navigate('MyCart')}
+				style={{
+					color: 'white',
+					paddingLeft: 300,
+				}}
+			>
+				<Entypo
+					name='archive'
+				></Entypo>
+			</TouchableOpacity>
 			<Text
 				style={{
 					fontSize: 14,

@@ -5,20 +5,21 @@ import {
     TouchableOpacity,
     StatusBar,
     Image,
+    ToastAndroid,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Items } from '../../database/Database';
 import { COLOURS } from '../../database/Database';
 import Entypo from 'react-native-vector-icons/Entypo';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 const arImage = require('../../assets/images/arImage/arImage.png');
 const ProductInfo = ({ route, navigation }) => {
     const { productID } = route.params;
-    const [product, setProduct] = useState({});
-    // console.log(route.params);
 
-    //https://blog.logrocket.com/guide-to-react-useeffect-hook/
-    //using useEffect to load async effects
+    //states
+    const [product, setProduct] = useState({});
+
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
             getDataFromDB();
@@ -36,6 +37,39 @@ const ProductInfo = ({ route, navigation }) => {
             }
         }
     };
+
+    //add to cart
+    const addToCart = async id => {
+        let itemArray = await AsyncStorage.getItem('cartItems');
+        itemArray = JSON.parse(itemArray);
+        if (itemArray) {
+            let array = itemArray;
+            array.push(id);
+
+            try {
+                await AsyncStorage.setItem('cartItems', JSON.stringify(array));
+                ToastAndroid.show(
+                    'Item Added Successfully to cart',
+                    ToastAndroid.SHORT,
+                );
+                navigation.navigate('Home');
+            } catch (error) {
+                return error;
+            }
+        } else {
+            let array = [];
+            array.push(id);
+            try {
+                await AsyncStorage.setItem('cartItems', JSON.stringify(array));
+                ToastAndroid.show('Item Added Successfully to cart', ToastAndroid.SHORT,);
+                navigation.navigate('Home');
+            }
+            catch (error) {
+                return error;
+            }
+        }
+    };
+
     // console.log(product);
     return (
         <View
@@ -205,6 +239,7 @@ const ProductInfo = ({ route, navigation }) => {
 
                 {/*buy now touchable opacity*/}
                 <TouchableOpacity
+                    onPress={() => (addToCart(product.id))}
                     style={{
                         width: '70%',
                         borderLeftWidth: 1,
@@ -221,7 +256,7 @@ const ProductInfo = ({ route, navigation }) => {
                     </Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </View >
     );
 };
 

@@ -42,7 +42,7 @@ export const Items = [
         subDes: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, voluptatibus fugit tempora error soluta repudiandae aspernatur alias aliquid adipisci, quo ipsa nihil sequi esse debitis ratione. Laudantium fugit reiciendis labore!
         `,
         isOff: false,
-        productImage: require('../assets/images/chair/chair1.png'),
+        productImage: require('../assets/images/chair/chair2.png'),
         isAvailable: true,
         // productImageList: [
         //     require('./images/products/boat1.png'),
@@ -61,7 +61,7 @@ export const Items = [
         `,
         isOff: true,
         offPercentage: 18,
-        productImage: require('../assets/images/chair/chair1.png'),
+        productImage: require('../assets/images/chair/chair3.png'),
         isAvailable: true,
         // productImageList: [
         //     require('./images/acceseries/boatairpods1.png'),
@@ -79,7 +79,7 @@ export const Items = [
         subDes: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, voluptatibus fugit tempora error soluta repudiandae aspernatur alias aliquid adipisci, quo ipsa nihil sequi esse debitis ratione. Laudantium fugit reiciendis labore!
         `,
         isOff: false,
-        productImage: require('../assets/images/chair/chair1.png'),
+        productImage: require('../assets/images/chair/chair2.png'),
         isAvailable: true,
         // productImageList: [
         //     require('./images/acceseries/boatbassheads1.png'),
@@ -96,7 +96,7 @@ export const Items = [
         subDes: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, voluptatibus fugit tempora error soluta repudiandae aspernatur alias aliquid adipisci, quo ipsa nihil sequi esse debitis ratione. Laudantium fugit reiciendis labore!
         `,
         isOff: false,
-        productImage: require('../assets/images/chair/chair1.png'),
+        productImage: require('../assets/images/chair/chair3.png'),
         isAvailable: false,
         // productImageList: [
         //     require('./images/acceseries/boatrockerz1.png'),
