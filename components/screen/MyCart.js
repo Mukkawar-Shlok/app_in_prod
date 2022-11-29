@@ -79,7 +79,7 @@ const MyCart = ({ navigation }) => {
             return error;
         }
 
-        ToastAndroid.show('Items will be Deliverd SOON!', ToastAndroid.SHORT);
+        ToastAndroid.show('Delivery will be done', ToastAndroid.SHORT);
 
         navigation.navigate('Home');
     };
@@ -142,16 +142,13 @@ const MyCart = ({ navigation }) => {
                             }}>
                             <Text
                                 style={{
+                                    color: 'black',
                                     fontSize: 14,
                                     fontWeight: '400',
                                     maxWidth: '85%',
                                     marginRight: 4,
                                 }}>
                                 &#8377;{data.productPrice}
-                            </Text>
-                            <Text>
-                                (~&#8377;
-                                {data.productPrice + data.productPrice / 20})
                             </Text>
                         </View>
                     </View>
@@ -163,7 +160,7 @@ const MyCart = ({ navigation }) => {
                         }}>
                         <View
                             style={{
-                                paddingLeft: 160,
+                                paddingLeft: 150,
                             }}
                         >
                             <TouchableOpacity onPress={() => removeItemFromCart(data.id)}
@@ -265,10 +262,7 @@ const MyCart = ({ navigation }) => {
                                     }}>
                                     {/* <MaterialCommunityIcons
                                         name="truck-delivery-outline"
-                                        style={{
-                                            fontSize: 18,
-                                            color: COLOURS.blue,
-                                        }}
+                                        style={{ }}
                                     /> */}
                                 </View>
                                 <View>
@@ -294,7 +288,6 @@ const MyCart = ({ navigation }) => {
                             </View>
                             {/* <MaterialCommunityIcons
                                 name="chevron-right"
-                                style={{ fontSize: 22, color: COLOURS.black }}
                             /> */}
                         </View>
                     </View>
@@ -386,7 +379,7 @@ const MyCart = ({ navigation }) => {
                                 letterSpacing: 1,
                                 marginBottom: 20,
                             }}>
-                            Order Info
+                            Order-Info
                         </Text>
                         <View
                             style={{
